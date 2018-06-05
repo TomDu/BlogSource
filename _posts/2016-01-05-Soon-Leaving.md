@@ -1,7 +1,8 @@
+---
 title: Soon Leaving
 date: 2016-01-05 19:58:03
 tags:
-- 杂
+- Freewriting
 ---
 
 论文搞定、等答辩、准备滚蛋。

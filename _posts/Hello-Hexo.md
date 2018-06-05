@@ -1,7 +1,8 @@
+---
 title: Hello Hexo
 date: 2015-10-20 22:10:48
 tags:
-- 杂
+- Freewriting
 categories:
 - 日志
 ---
