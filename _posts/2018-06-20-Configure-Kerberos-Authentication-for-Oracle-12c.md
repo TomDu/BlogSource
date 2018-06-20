@@ -29,6 +29,8 @@ March 19, 2016](http://oracledbtales.blogspot.com/2016/03/active-directory-authe
 
 # Step by step
 
+<!-- more -->
+
 ## Create 3 VMs in Azure, under the same VNET
 
 | Server name | Internal IP | Role | DNS Server | Domain |
