@@ -49,7 +49,7 @@ March 19, 2016](http://oracledbtales.blogspot.com/2016/03/active-directory-authe
 
 ## On siduOracle0
 
-Create a service account "servora" in AD for database server to valiade the Kerberos tickets with:
+Create a service account `servora` in AD for database server to valiade the Kerberos tickets with:
 
 Check option “Do not require Kerberos PreAuthentication” for this user;
 
@@ -89,7 +89,7 @@ Install Kerberos client:
 yum -y install krb5-workstation
 ```
 
-Validate generated krb5.keytab:
+Validate generated `krb5.keytab`:
 
 ```
 [oracle@siduOracle998 admin]$ klist -kte /etc/krb5.keytab
@@ -115,7 +115,7 @@ renew until 06/14/18 00:09:50
 klist: No credentials cache found (ticket cache FILE:/tmp/krb5cc_54321)
 ```
 
-Edit /etc/krb5.conf like this:
+Edit `/etc/krb5.conf` like this:
 
 ```
 [logging]
@@ -152,7 +152,7 @@ renew until 06/14/18 00:16:24
 [oracle@siduOracle998 admin]$ kdestroy
 ```
 
-Adjust the sqlnet.ora:
+Adjust the `sqlnet.ora`:
 
 ```
 SQLNET.KERBEROS5_CONF=/etc/krb5.conf
@@ -165,7 +165,7 @@ SQLNET.AUTHENTICATION_SERVICES=(BEQ,KERBEROS5)
 # TRACE_LEVEL_SERVER=16
 ```
 
-tnsnames.ora:
+`tnsnames.ora`:
 
 ```
 MAINORCL =
@@ -216,7 +216,7 @@ Database mounted.
 Database opened.
 ```
 
-Create user "test@SSIS.COM":
+Create user `test@SSIS.COM`:
 
 ```
 alter session set "_ORACLE_SCRIPT"=true;
@@ -267,7 +267,7 @@ renew until 06/14/18 00:16:24
 
 Install Oracle client 12.
 
-Create c:\kerberos\krb5.conf, identical as on the server except for the port numbers:
+Create `c:\kerberos\krb5.conf`, identical as on the server except for the port numbers:
 
 ```
 [libdefaults]
@@ -284,7 +284,7 @@ Create c:\kerberos\krb5.conf, identical as on the server except for the port num
  .ssis.com=SSIS.COM
 ```
 
-Adjust sqlnet.ora：
+Adjust `sqlnet.ora`：
 
 ```
 SQLNET.AUTHENTICATION_SERVICES= (BEQ,KERBEROS5)
@@ -301,7 +301,7 @@ SQLNET.KERBEROS5_CC_NAME=MSLSA:
 - For 11.x clients authentication service KERBEROS5 is used, with Credential Cache (CC_NAME) **OSMSFT:**
 - For 12.x client 12.x in theory, KERBROS5 service should be used with **MSLSA:** for the CC_NAME, ~~however due to bug 18895651, KERBEROS5PRE is required with CC_NAME OSMSFT:~~ (seems fixed)
  
-Edit C:\Windows\System32\drivers\etc\services:
+Edit `C:\Windows\System32\drivers\etc\services`:
 
 ```
 kerberos           88/tcp    kerberos5 krb5 kerberos-sec      #Kerberos
@@ -310,7 +310,7 @@ kerberos           88/udp    kerberos5 krb5 kerberos-sec      #Kerberos
 
 ### Validate:
 
-Login to siduOracle1 with ssis\test;
+Login to siduOracle1 with `ssis\test`;
 
 ```
 C:\Users\sizhong.SSIS>sqlplus /@mainorcl
