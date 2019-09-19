@@ -18,11 +18,15 @@ The goal of the principles is the creation of mid-level software structures that
 
 > **Single responsibility principle**
 >
+> A module should be responsible to one, and only one, actor.
+>
 > A class should only have a single responsibility, that is, only changes to one part of the software's specification should be able to affect the specification of the class.
 
 > **Open–closed principle**
 >
 > Software entities should be open for extension, but closed for modification.
+> 
+> The goal is to make the system easy to extend without incurring a high impact of change. This goal is accomplished by partitioning the system into components, and arranging those components into a dependency hierarchy that protects higher-level components from changes in lower-level components.
 
 > **Liskov substitution principle**
 >
@@ -30,8 +34,10 @@ The goal of the principles is the creation of mid-level software structures that
 
 > **Interface segregation principle**
 >
-> Many client-specific interfaces are better than one general-purpose interface.
+> Many client-specific interfaces are better than one general-purpose interface. Depending on something that carries baggage that you don’t need can cause you troubles that you didn’t expect.
 
 >**Dependency inversion principle**
 >
-> One should depend upon abstractions, **not** concretions.
+> One should depend upon abstractions, **not** concretions. Most flexible systems are those in which source code dependencies refer only to abstractions, not to concretions.
+>
+> Don’t refer to volatile concrete classes; Don’t derive from volatile concrete classes; Don’t override concrete functions; Never mention the name of anything concrete and volatile.
